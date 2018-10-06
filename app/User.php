@@ -26,4 +26,27 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+     /**
+     * method one to one Profile
+     *
+     * @return void
+     */
+    public function profile(){
+
+       return $this->hasOne(Profile::class);
+
+    }
+
+     /**
+     * method one to Many -> Posts
+     *
+     * @return void
+     */
+    public function posts(){
+
+        return $this->hasMany(Post::class);
+ 
+     }
+
 }
